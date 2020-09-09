@@ -1,0 +1,13 @@
+<div class="list-group">
+  <a *ngFor="let item of list" [routerLink]="['/' + item.name]" routerLinkActive="active" class="list-group-item list-group-item-action text-capitalize">
+    {{item.name}}
+  </a>
+</div>
+
+<nav aria-label="Pokemon list navigation" class="mt-3">
+  <ul class="pagination justify-content-between">
+    <li class="page-item" [ngClass]="{'disabled': !previous}"><a class="page-link" role="button" (click)="loadPrevious()">Previous</a></li>
+    <li class="page-item" [ngClass]="{'disabled': !next}"><a class="page-link" role="button" (click)="loadNext()">Next</a></li>
+  </ul>
+</nav>
+
